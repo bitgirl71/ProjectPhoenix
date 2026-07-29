@@ -1,0 +1,120 @@
+"""
+    Project Phoenix 1.1
+
+    Prima review programma Python completato.
+
+    Autrice: Anna Grazia
+    Data: 21 Luglio 2026
+
+    Obiettivo:
+    Creo le prime funzioni imparando Python dopo molti anni.
+    """
+
+def chiedi_nome():
+    nome = input("Come ti chiami? ")
+    return nome
+
+def chiedi_eta():
+
+    attesa_risposta = True
+
+    while attesa_risposta:
+        eta = input("Quanti anni hai? ")
+        #scelta = input("Vuoi ricomincare da capo? S/N ")
+        risposta_non_valida = False
+
+        try:
+            eta = int(eta)
+            risposta_non_valida = False
+
+        except:
+            print("ERRORE!!!")
+            risposta_non_valida = True
+            print(risposta_non_valida)
+       
+            if risposta_non_valida:
+                print("Hai sbagliato risposta! Ritenta!!!")
+            #   attesa_risposta = True          
+            else:
+                attesa_risposta = False
+            #   attesa_risposta = scelta == "S" or scelta == "N"
+        
+    risposta = scelta == "S"
+
+    risposta_non_valida = True
+    
+
+    #risposta_non_valida == eta = int(eta)
+       
+    #    if risposta_non_valida:
+    #        print("Hai sbagliato risposta! Ritenta!!!")
+        #   attesa_risposta = True          
+    #    else:
+    #       attesa_risposta = False
+        #   attesa_risposta = scelta == "S" or scelta == "N"
+        
+    #risposta = scelta == "S"
+    while risposta_non_valida:
+        try:
+            eta = int(eta)
+        except:
+            print("ERRORE!!!")
+            risposta_non_valida = False
+            print(risposta_non_valida)
+
+    return eta
+
+def messaggio_eta(eta):
+
+    if eta < 18:
+        messaggio = "Cosa ci fai qui?! Esci e vai al mare!"
+    elif eta < 50:
+        messaggio = "Vai alla grande!"
+    elif eta == 55:
+        messaggio = "Età palindroma: sicuramente farai grandi cose in questo anno!!!"
+    elif eta < 65:
+        messaggio = "Chi la dura, la vince!"
+    else:
+        messaggio = "... e hai ancora voglia di stare davanti ad un pc?!"
+
+    return messaggio
+
+def chiedi_ricomincia():
+    attesa_risposta = True
+    while attesa_risposta:
+        scelta = input("Vuoi ricomincare da capo? S/N ")
+        risposta_non_valida = scelta != "S" and scelta != "N"
+       
+        if risposta_non_valida:
+            print("Hai sbagliato risposta! Ritenta!!!")
+        #   attesa_risposta = True          
+        else:
+            attesa_risposta = False
+        #   attesa_risposta = scelta == "S" or scelta == "N"
+        
+    risposta = scelta == "S"
+    return risposta
+
+def main():
+
+    continua = True
+
+    while continua:
+    
+        nome = chiedi_nome()
+        eta = chiedi_eta()
+        messaggio = messaggio_eta(eta)
+
+        print(f"Ciao, {nome}!")
+        print(f"Hai {eta} anni.")
+        print(messaggio)
+        
+        print("Benvenuta in Project Phoenix.")
+
+        continua = chiedi_ricomincia()
+        #if scelta == "N":
+        #   continua = False
+
+
+if __name__ == "__main__":
+    main()

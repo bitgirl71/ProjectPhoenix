@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VS Code (impostazioni personali)
+.vscode/
+
+# Test e coverage
+.pytest_cache/
+.coverage
+htmlcov/

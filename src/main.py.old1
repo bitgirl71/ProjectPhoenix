@@ -1,0 +1,53 @@
+def main():
+
+    """
+    Project Phoenix 1.0
+
+    Primo programma Python completato.
+
+    Autrice: Anna Grazia
+    Data:Luglio 2026
+
+    Obiettivo:
+    Riprendere a programmare imparando Python dopo molti anni.
+    """
+
+    continua = True
+
+    while continua:
+    
+        nome = input("Come ti chiami? ")
+        eta = int(input("Quanti anni hai? "))
+
+        print(f"Ciao, {nome}!")
+        print(f"Hai {eta} anni.")
+
+        if eta < 18:
+            print("Cosa ci fai qui?! Esci e vai al mare!")
+        elif eta < 50:
+            print("Vai alla grande!")
+        elif eta == 55:
+            print("Età palindroma: sicuramente farai grandi cose in questo anno!!!")
+        elif eta < 65:
+            print("Chi la dura, la vince!")
+        else:
+            print("... e hai ancora voglia di stare davanti ad un pc?!")
+    
+        print("Benvenuta in Project Phoenix.")
+
+        ricomincia = True
+        while ricomincia:
+            scelta = input("Vuoi ricomincare da capo? S/N ")
+            esito = scelta != "S" and scelta != "N"
+       
+            if esito:
+                print("Hai sbagliato risposta! Ritenta!!!")
+            else:
+                ricomincia = False
+
+            if scelta == "N":
+                continua = False
+
+
+if __name__ == "__main__":
+    main()
