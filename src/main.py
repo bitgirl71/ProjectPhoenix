@@ -1,13 +1,13 @@
 """
-    Project Phoenix 1.2
+    Project Phoenix 1.3
 
-    Seconda review programma Python completato.
+    Terza review programma Python completato.
 
     Autrice: Anna Grazia
-    Data: 27 Luglio 2026
+    Data: 31 Luglio 2026
 
     Obiettivo:
-    Migioro le prime funzioni già scritte nella versione 1.1 imparando Python dopo molti anni.
+    Mi dedico ai dettagli stilistici ed ad apprendere lo stile Python.
 
     I linguaggi "classici" chiedevano soprattutto di descrivere il procedimento.
     Python ti invita a descrivere l'intenzione.
@@ -37,7 +37,6 @@ def chiedi_eta():
         eta = input("Quanti anni hai? ")
 
         try:
-#            eta = int(eta)
             return int(eta)
         except ValueError:
             print("ERRORE!!! Devi scrivere l'età solo in caratteri numerici, così: 12")
@@ -65,9 +64,8 @@ def stampa_saluto(nome):
 
 
 def commenta_eta(eta):
-    messaggio = messaggio_eta(eta)
     print(f"Hai {eta} anni.")
-    print(messaggio)
+    print(messaggio_eta(eta))
 
 
         
@@ -83,17 +81,15 @@ def chiedi_ricomincia():
 
 def main():
 
-    continua = True
-
-    while continua:
-    
+    while True:   
         nome = chiedi_nome()
         eta = chiedi_eta()
 
         stampa_saluto(nome)
         commenta_eta(eta)
 
-        continua = chiedi_ricomincia()       
+        if not chiedi_ricomincia():
+            break    
 
 if __name__ == "__main__":
     main()
