@@ -1,16 +1,19 @@
 """
-    Project Phoenix 1.3
+    Project Phoenix 1.4
 
-    Terza review programma Python completato.
+    Quarta revisione del programma Python di studio.
 
     Autrice: Anna Grazia
-    Data: 31 Luglio 2026
+    Data: 4 Agosto 2026
 
     Obiettivo:
-    Mi dedico ai dettagli stilistici ed ad apprendere lo stile Python.
+    Mi dedico ai dettagli stilistici ed ad apprendere lo stile Python,
+    ma anche ad aggiungere piccole funzionalità.
 
     I linguaggi "classici" chiedevano soprattutto di descrivere il procedimento.
     Python ti invita a descrivere l'intenzione.
+
+    Ho finalmente aggiunto il controllo sulle età palindrome.
     """
 
 def chiedi_nome():
@@ -45,18 +48,33 @@ def chiedi_eta():
 
 def messaggio_eta(eta):
 
-    if eta < 18:
+    if controlla_palindromo(eta):
+        messaggio = "Età palindroma: sicuramente farai grandi cose in questo anno!!!"
+    elif eta < 18:
         messaggio = "Cosa ci fai qui?! Esci e vai al mare!"
     elif eta < 50:
         messaggio = "Vai alla grande!"
-    elif eta == 55:
-        messaggio = "Età palindroma: sicuramente farai grandi cose in questo anno!!!"
     elif eta < 65:
         messaggio = "Chi la dura, la vince!"
     else:
         messaggio = "... e hai ancora voglia di stare davanti ad un pc?!"
 
     return messaggio
+
+def controlla_palindromo(numero):
+
+    numero_originale = numero
+    numero_inverso = 0
+
+    while numero > 0:
+
+        resto = numero % 10
+
+        numero_inverso = (numero_inverso * 10) + resto
+
+        numero = numero // 10
+
+    return numero_originale == numero_inverso
 
 def stampa_saluto(nome):
     print("Benvenuta in Project Phoenix.")
