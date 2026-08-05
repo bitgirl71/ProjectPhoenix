@@ -119,9 +119,9 @@ def lumino(nome):
         ind_dx -= 1    
     
     if palindromo:
-        print("Il nome è palindromo.")
+        print("Il tuo nome è palindromo.")
     else:
-        print("Il nome non è palindromo.")    
+        print("Il tuo nome non è palindromo.")    
 
 
 
