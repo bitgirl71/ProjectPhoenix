@@ -1,10 +1,10 @@
 """
-    Project Phoenix 1.4
+    Project Phoenix 1.4.1
 
     Quarta revisione del programma Python di studio.
 
     Autrice: Anna Grazia
-    Data: 4 Agosto 2026
+    Data: 5 Agosto 2026
 
     Obiettivo:
     Mi dedico ai dettagli stilistici ed ad apprendere lo stile Python,
@@ -14,6 +14,8 @@
     Python ti invita a descrivere l'intenzione.
 
     Ho finalmente aggiunto il controllo sulle età palindrome.
+
+    In fieri, studio sul controllo del nome palindromo.
     """
 
 def chiedi_nome():
@@ -80,6 +82,8 @@ def stampa_saluto(nome):
     print("Benvenuta in Project Phoenix.")
     print(f"Ciao, {nome}!")
 
+    lumino(nome)
+
 
 def commenta_eta(eta):
     print(f"Hai {eta} anni.")
@@ -96,6 +100,26 @@ def chiedi_ricomincia():
             print("Hai sbagliato risposta! Ritenta!!!")
         else:
             return scelta == "S"
+
+def lumino(nome):
+
+    indice = 0
+
+    limen = (len(nome))
+
+    while indice < limen:
+
+        print(nome[indice])
+        indice = indice + 1
+    
+    else:
+        print("Ho finito di contare")
+
+    
+    
+   
+
+
 
 def main():
 
