@@ -1,7 +1,7 @@
 """
-    Project Phoenix 1.4.1
+    Project Phoenix 1.5
 
-    Quarta revisione del programma Python di studio.
+    Quinta revisione del programma Python di studio.
 
     Autrice: Anna Grazia
     Data: 5 Agosto 2026
@@ -13,9 +13,8 @@
     I linguaggi "classici" chiedevano soprattutto di descrivere il procedimento.
     Python ti invita a descrivere l'intenzione.
 
-    Ho finalmente aggiunto il controllo sulle età palindrome.
+    Ho finalmente implementato la verifica dei palindromi per nome ed età.
 
-    In fieri, studio sul controllo del nome palindromo.
     """
 
 def chiedi_nome():
@@ -103,21 +102,26 @@ def chiedi_ricomincia():
 
 def lumino(nome):
 
-    indice = 0
+    palindromo = True
+    ind_sx = 0
 
     limen = (len(nome))
 
-    while indice < limen:
+    ind_dx = limen - 1
 
-        print(nome[indice])
-        indice = indice + 1
+    while ind_sx < ind_dx:
+
+        if nome[ind_sx] != nome[ind_dx]:
+            palindromo = False
+            break
+
+        ind_sx += 1
+        ind_dx -= 1    
     
+    if palindromo:
+        print("Il nome è palindromo.")
     else:
-        print("Ho finito di contare")
-
-    
-    
-   
+        print("Il nome non è palindromo.")    
 
 
 

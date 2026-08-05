@@ -12,10 +12,8 @@ Ogni identificatore deve guadagnarsi il diritto di esistere.
 I nomi si scelgono per la chiarezza, non per l'originalità... ma non sono ornamenti.
 
 Talvolta un termine latino o greco riesce a esprimere un concetto con maggiore precisione di un termine moderno.
-Quando accade, l'etimologia diventa parte della documentazione, mai una semplice decorazione.
 
-Un termine latino o greco è il benvenuto solo quando esprime un concetto meglio di qualsiasi alternativa moderna.
-In quel caso, l'etimologia diventa parte della documentazione, mai una decorazione.
+Quando accade, l'etimologia diventa parte della documentazione, mai una semplice decorazione.
 
 Per questo, un termine latino o greco è il benvenuto solo quando esprime un concetto meglio di qualsiasi alternativa moderna.
 
