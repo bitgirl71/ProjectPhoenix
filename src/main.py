@@ -1,10 +1,10 @@
 """
-    Project Phoenix 1.5
+    Project Phoenix 1.6
 
-    Quinta revisione del programma Python di studio.
+    Sesta revisione del programma Python di studio.
 
     Autrice: Anna Grazia
-    Data: 5 Agosto 2026
+    Data: 6 Agosto 2026
 
     Obiettivo:
     Mi dedico ai dettagli stilistici ed ad apprendere lo stile Python,
@@ -15,7 +15,11 @@
 
     Ho finalmente implementato la verifica dei palindromi per nome ed età.
 
+    Oggi ho cominciato a ricordare cosa sono una classe, un'istanza e un oggetto.
+    E, con essi, il piacere di costruire un'interfaccia grafica.
+    
     """
+import tkinter as tk
 
 def chiedi_nome():
     nome = input("Come ti chiami? ")
@@ -138,4 +142,16 @@ def main():
             break    
 
 if __name__ == "__main__":
-    main()
+
+    finestra = tk.Tk()
+    finestra.title("Project Phoenix")
+    finestra.geometry("500x300")
+
+    etichetta = tk.Label(finestra, text="Nome")
+    etichetta.pack()
+
+    casella_nome = tk.Entry(finestra)
+    casella_nome.pack()
+
+    finestra.mainloop()
+#    main()
