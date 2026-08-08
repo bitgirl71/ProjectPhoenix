@@ -1,10 +1,10 @@
 """
-Project Phoenix 1.7 - Ricotta Edition
+Project Phoenix 1.7.1 - Ricotta Edition
 
 Settima revisione del programma Python di studio.
 
 Autrice: Anna Grazia
-Data: 7 agosto 2026
+Data: 8 agosto 2026
 
 Obiettivo:
 Continuo a dedicarmi ai dettagli stilistici, ad apprendere lo stile Python
@@ -36,10 +36,16 @@ Infine... Oggi ho capito che una funzione non dovrebbe preoccuparsi di come most
 un'informazione, ma soltanto di restituirla.
 
 Sarà l'interfaccia a decidere come utilizzarla.
+
+Ho aggiunto il controllo dell'iniziale del nome inserito, in modo che sia sempre visualizzata in maiuscolo.
+Maiuscola in output, minuscola in input.
+
+Ho aggiunto il riconoscimento del tasto Invio non come evento casuale all'interno della finestra, ma come 
+evento legato al pulsante "Verifica".
 """
 import tkinter as tk
 
-def verifica():
+def verifica(event=None):
     nome = casella_nome.get()
     eta = casella_eta.get()
 
@@ -125,17 +131,14 @@ def controlla_palindromo(numero):
 
 def stampa_saluto(nome):
 
-    #print("Benvenuta in Project Phoenix.")
-    #print(f"Ciao, {nome}!")
+    nome = nome.capitalize()
 
-    saluto = "Benvenuta in Project Phoenix. \n"
+    saluto = "Benvenuta in Project Phoenix. \n\n"
     saluto += f"Ciao, {nome}!"
 
     saluto += "\n"
     saluto += lumino(nome)
-
-    #lumino(nome)
-    
+ 
     return saluto
 
 
@@ -145,7 +148,6 @@ def commenta_eta(eta):
     messaggio += messaggio_eta(eta)
 
     return messaggio
-
 
         
 def chiedi_ricomincia():
@@ -163,6 +165,8 @@ def lumino(nome):
     palindromo = True
     ind_sx = 0
 
+    nome = nome.strip().lower()
+
     limen = (len(nome))
 
     ind_dx = limen - 1
@@ -177,13 +181,9 @@ def lumino(nome):
         ind_dx -= 1    
     
     if palindromo:
-        #print("Il tuo nome è palindromo.")
         return "Il tuo nome è palindromo."
     else:
-        #print("Il tuo nome non è palindromo.")   
         return "Il tuo nome non è palindromo."
-
-
 
 
 def main():
@@ -221,6 +221,7 @@ if __name__ == "__main__":
         text="Verifica",
         command=verifica
     )
+    pulsante.bind("<Return>", verifica)
     pulsante.pack()
 
     etichetta_saluto = tk.Label(
@@ -229,7 +230,6 @@ if __name__ == "__main__":
         justify="left"
     )
     etichetta_saluto.pack()
-
 
     finestra.mainloop()
 #    main()
